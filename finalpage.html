@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wholesome Webspace</title>
+    
+  <meta charset="UTF-8">
+  <title>A Sky Full of Blue</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: radial-gradient(ellipse at top, #a9d6ff, #edf6ff);
+      overflow: hidden;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .stars span {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite ease-in-out alternate;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.2; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1.5); }
+    }
+
+    .final-message {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin-top: 120px;
+      color: #333;
+    }
+
+    .final-message h1 {
+      font-size: 2.8em;
+      color: #3777bb;
+      animation: fadeInDown 2s ease;
+    }
+
+    .final-message p {
+      font-size: 1.3em;
+      margin-top: 20px;
+      line-height: 1.7;
+      color: #444;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .love-note {
+      margin-top: 40px;
+      font-size: 1.2em;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .back-button {
+      margin-top: 40px;
+      background: #6ca0dc;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .back-button:hover {
+      background: #457ab1;
+    }
+  </style>
+</head>
+<body>
+<div style="max-width: 900px; margin: auto; padding: 40px; background: #fff0f5; border-radius: 16px; box-shadow: 0 0 20px rgba(0,0,0,0.05);">
+  <audio autoplay loop>
+    <source src="Song2.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="stars" id="stars-container"></div>
+
+  <div class="final-message">
+    <h1>A Sky Full of Blue</h1>
+    <p>
+      You, Blue...<br>
+      You're the magic that turned an ordinary sky into a canvas of calm, charm, and color.<br>
+      You're the part of the sky I’ll always look for — even when in depths of darkness
+    </p>
+    <div class="love-note">
+      This was more than just a surprise.<br>
+      This was my way of saying: You are unforgettable.<br>
+      You are *my forever Blue*.
+    </div>
+    <button class="back-button" onclick="location.href='index.html'">Take Me to the Beginning</button>
+  </div>
+
+  <script>
+    const starContainer = document.getElementById("stars-container");
+    for (let i = 0; i < 80; i++) {
+      const star = document.createElement("span");
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDuration = (2 + Math.random() * 3) + "s";
+      starContainer.appendChild(star);
+    }
+  </script>
+</div>
+</body>
+</html>

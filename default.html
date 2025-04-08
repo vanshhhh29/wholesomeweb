@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>for my Blue!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="Song1.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="hearts">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <h1>To the One Who Paints My heart Blue</h1>
+  <img src="pic1.jpg" alt="Cutie!">
+  
+  <p>
+    you look even cute when your mad!<br>
+    your smile lights up the sky blue!<br>
+    You’re not just a pretty girl, youre a whole queen ruling all of us!
+  </p>
+
+  <button onclick="location.href='page2.html'">if you wanna do more kalesh w me, click here;)</button>
+
+  <script>
+    setInterval(() => {
+      const emoji = document.createElement('div');
+      emoji.textContent = Math.random() < 0.5 ? '✨' : '💙';
+      emoji.style.position = 'fixed';
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.top = '-2vh';
+      emoji.style.fontSize = '24px';
+      emoji.style.zIndex = 1;
+      emoji.style.animation = 'drop 3s linear';
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 3000);
+    }, 300);
+  </script>
+  <style>
+    @keyframes drop {
+      to { transform: translateY(120vh); opacity: 0; }
+    }
+  </style>
+</body>
+</html>
